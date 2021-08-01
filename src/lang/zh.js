@@ -79,15 +79,48 @@ export default {
       yes:"确认",
       cancel:"取消",
       success:"删除成功",
-      error:"删除失败"
+      error:"删除失败",
+      cancelMessage: "已取消删除"
     },
     update:{
       success:"修改成功",
-      error:"修改失败，请检查您的输入是否符合规范！"
+      error:"修改失败,请检查标识符是否已存在"
     },
     add:{
       success:"添加成功",
-      error:"添加失败,当前产品id已存在！"
+      error:"添加失败,请检查标识符是否已存在"
     }
-  }
+  },
+  categories: {
+    id: "分类id",
+    nameCn: "分类名称(中文)",
+    nameEn: "分类名称(英文)",
+    nameTw: "分类名称(繁体)",
+    parentId: "双亲id",
+    parent: "上级分类",
+    iconUrl: "图标",
+    sort: "排序值",
+    name: "名称",
+    message: "请输入",
+    expand: "展开",
+    noExpand: "收起",
+    editCategory: "编辑分类",
+    add: {
+      success: "添加成功",
+      error: "添加失败"
+    },
+    update: {
+      success: "修改成功",
+      error: "修改失败"
+    },
+    del: {
+      warning: "是否确认删除 ",
+      title: "警告",
+      yes: "确认",
+      cancel: "取消",
+      success: "删除成功",
+      error: "删除失败",
+      cancelMessage: "已取消删除"
+    }
+  },
 }

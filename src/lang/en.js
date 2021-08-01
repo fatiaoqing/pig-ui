@@ -73,15 +73,48 @@ export default {
       yes:"sure",
       cancel:"cancel",
       success:"Delete success",
-      error:"Delete failed"
+      error:"Delete failed",
+      cancelMessage: "Deletion cancelled"
     },
     update:{
       success:"Update success",
-      error:"Modification failed, please check whether your input meets the specification！"
+      error:"Update failed,please Please check if the dpFlag exists"
     },
     add:{
       success:"Add success",
-      error:"Failed to add. The current product ID already exists！"
+      error:"Add failed,please Please check if the dpFlag exists"
     }
-  }
+  },
+  categories: {
+    id: "Id",
+    nameCn: "nameCn",
+    nameEn: "nameEn",
+    nameTw: "nameTw",
+    parentId: "parentId",
+    parent: "superior",
+    iconUrl: "icon",
+    sort: "sort",
+    name: "name",
+    message: "please input the",
+    expand: "open",
+    noExpand: "close",
+    editCategory: "editCategory",
+    del:{
+      warning:"Are you sure you want to delete ",
+      title:"Warning",
+      yes:"sure",
+      cancel:"cancel",
+      success:"Delete success",
+      error:"Delete failed",
+      cancelMessage: "Deletion cancelled"
+    },
+    update:{
+      success:"Update success",
+      error:"Update failed"
+    },
+    add:{
+      success:"Add success",
+      error:"Add failed"
+    }
+  },
 }

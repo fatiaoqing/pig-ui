@@ -19,40 +19,71 @@ import request from '@/router/axios'
 
 export function addProduct(obj) {
     return request({
-      url: '/admin/products',
+      url: '/products',
       method: 'post',
       data: obj
     })
   }
 export function delProduct(id) {
     return request({
-        url: '/admin/products/' + id,
+        url: '/products/' + id,
         method: 'delete'
     })
   }
 export function putProduct(obj) {
     return request({
-        url: '/admin/products',
+        url: '/products',
         method: 'put',
         data: obj
     })
   }
 export function getProduct(page, categoryId, text) {
     return request({
-        url: '/admin/products?categoryId=' + categoryId + '&text='+ text,
+        url: '/products?categoryId=' + categoryId + '&text=' + text,
         method: 'get',
     })
   }
-export function getTree(query) {
+export function getTree() {
   return request({
-    url: '/admin/products/categories/tree',
+    url: '/products/categories/tree',
     method: 'get',
-    param: query,
   })
 }
-export function getFlags(){
+export function getHome() {
   return request({
-    url:'/admin/products/list',
+    url: '/upload/FileUriPrefix',
     method: 'get',
+  })
+}
+export function uploadDelete(path) {
+  return request({
+    url: '/upload',
+    method: 'delete',
+    params: path,
+  })
+}
+export function getDpFlags(dpFlag, dpFlags) {
+  return request({
+    url: '/products/relation/dpFlag?dpFlag=' + dpFlag + '&dpFlags=' + dpFlags,
+    method: 'get',
+  })
+}
+export function getProductRelation(pid, page){
+  return request({
+    url: '/products/relation?pid=' + pid + '&page=' + page,
+    method: 'get',
+  })
+}
+export function addProductRelation(obj, pid) {
+  return request({
+    url: '/products/relation?pid=' + pid,
+    method: 'post',
+    data: 'obj',
+  })
+}
+export function delProductRelation(id) {
+  return request({
+    url: '/products/relation/' + id,
+    method: 'delete'
   })
 }

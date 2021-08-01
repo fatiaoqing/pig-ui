@@ -72,15 +72,48 @@ export default {
       yes:"確認",
       cancel:"取消",
       success:"刪除成功",
-      error:"刪除失敗"
+      error:"刪除失敗",
+      cancelMessage: "已取消刪除"
     },
     update:{
       success:"修改成功",
-      error:"修改失敗，請檢查您的輸入是否符合規範！"
+      error:"修改失敗,請檢查標識符是否已存在"
     },
     add:{
       success:"添加成功",
-      error:"添加失敗，當前產品id已存在！"
+      error:"添加失敗,請檢查標識符是否已存在"
     }
-  }
+  },
+  categories:{
+    id: "分類id",
+    nameCn: "分類名稱(中文)",
+    nameEn: "分類名稱(英文)",
+    nameTw: "分類名稱(繁體)",
+    parentId: "雙親id",
+    parent: "上級分類",
+    iconUrl: "圖標",
+    sort: "排序值",
+    name: "名稱",
+    message:"請輸入",
+    expand: "展開",
+    noExpand: "收起",
+    editCategory: "編輯分類",
+    del:{
+      warning:"是否確認刪除 ",
+      title:"警告",
+      yes:"確認",
+      cancel:"取消",
+      success:"刪除成功",
+      error:"刪除失敗",
+      cancelMessage: "已取消刪除"
+    },
+    update:{
+      success:"修改成功",
+      error:"修改失敗"
+    },
+    add:{
+      success:"添加成功",
+      error:"添加失敗"
+    }
+  },
 }

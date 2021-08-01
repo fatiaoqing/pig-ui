@@ -22,102 +22,120 @@ const DIC = {
   }, {
     label: 'string',
     value: 1
-  }, {
+  },{
     label: 'number',
     value: 2
-  }, {
+  },{
     label: 'bool',
     value: 3
-  }, {
+  },{
     label: 'enum',
     value: 4
-  }, {
+  },{
     label: 'raw',
     value: 5
+  }],
+  datakind2: [{
+
   }]
 }
 
-export const tableOption = {
-  searchMenuSpan: 6,
+import i18n from '@/lang'
+
+const home = '';
+
+export var tableOption = {
+  searchMenuSpan:6,
   excelBtn: 'true',
   selection: 'true',
-  menuAlign: 'center',
+  menuAlign:'center',
   align: 'center',
   headerAlign: 'center',
   border: true,
   stripe: true,
   addBtn: true,
   labelWidth: 110,
-  column: [{
-    label: 'id',
+  column:[{
+    label: i18n.t("iot.product.id"),
     prop: 'id',
     hide: true,
     editDisplay: false,
     addDisplay: false
-  }, {
-    label: '产品id',
+  },{
+    label: i18n.t("iot.product.productId"),
     prop: 'productId',
-    rules: [{
-      required: true,
-      message: "产品id不能为空",
-      trigger: "blur"
-    }],
-    editDisplay: false,
+    editDisplay: true,
     addDisplay: true
-  }, {
-    label: '简体中文',
+  },
+    {
+      label: i18n.t("iot.product.iconUrl"),
+      prop: 'iconUrl',
+      type: 'upload',
+      listType: 'picture-img',
+      propsHttp: {
+        home: home,   //路径前缀
+        res: 'data',
+        url: 'path',
+      },
+      canvasOption: { //图片回显
+        text: 'avue',
+        ratio: 0.1    //显示压缩比例
+      },
+      action: "/products/upload",
+    },
+    {
+    label: i18n.t("iot.product.nameCn"),
     prop: 'nameCn',
     type: 'input',
   }, {
-    label: '英文',
+    label: i18n.t("iot.product.nameEn"),
     prop: 'nameEn',
     type: 'input',
   }, {
-    label: '繁体',
+    label: i18n.t("iot.product.nameTw"),
     prop: 'nameTw',
     type: 'input',
   }, {
-    label: '产品分类',
+    label: i18n.t("iot.product.categoryId"),
     prop: 'categoryId',
-    // value: ,
     type: 'tree',
-    dicUrl: '/admin/products/categories/tree', //字典地址
-    dicMethod: "get",
-    filter: true, //支持过滤搜索
-    props: {     //   一级下拉框
-      //字典参数
-      label: "nameCn",
-      value: "id",
-    },
-    children: {   //二级下拉框
-      label: "nameCn",
-      value: "id",
-    }
-  }, {
-    label: '通信类型',
+      dicUrl:'/products/categories/tree',
+      dicMethod: "get",
+      filter:true, //过滤搜索
+      props: {     //一级下拉框
+        label: "nameCn",
+        value: "id",
+      },
+      children:{   //二级下拉框
+        label: "nameCn",
+        value: "id",
+      }
+  },{
+    label: i18n.t("iot.product.commType"),
     prop: 'commType',
     type: 'select',
-    dicData: DIC.datakind1, //传入静态字典
-  }, {
-    label: '功率',
+      dicData: DIC.datakind1,
+  },{
+    label: i18n.t("iot.product.power"),
     prop: 'power',
     type: 'input',
-  }, {
-    label: '备注',
+  },{
+    label: i18n.t("iot.product.notes"),
     prop: 'notes',
     type: 'input',
-  }, {
-    label: '搜索',
-    prop: 'keyword', //搜索框字段
-    left: 0,
-    search: true,
-    hide: true,
-    editDisplay: false,
-    addDisplay: false
-  }]
+  },{
+      label:i18n.t("iot.product.text"),
+      prop:'keyword', //搜索框字段
+      left: 0,
+      search: true,
+      hide: true,
+      editDisplay: false,
+      addDisplay: false
+    }]
 }
 export const pointTableOption = {
   addBtn: false,    //新增按钮
+  editBtn: false, //行内编辑按钮
   delBtn: true, //行删除
   refreshBtn: false,  //刷新
   columnBtn: false, //列显影
@@ -142,9 +160,18 @@ export const pointTableOption = {
     label: '数据传输类型',
     prop: 'dateTmType',
     type: 'text',
+  },{
+    label: '扩展类型中文',
+    prop: 'develop',
+    type: 'text',
+  },{
+    label: '扩展类型英文',
+    prop: 'develop',
+    type: 'text',
+  },{
+    label: '扩展类型繁体',
+    prop: 'develop',
+    type: 'text',
   },
   ]
-}
-export const pointChoiceOption = {
-
 }
